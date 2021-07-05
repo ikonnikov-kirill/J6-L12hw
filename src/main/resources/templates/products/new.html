@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New product</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="product" type="ru.ntr.springbootapp.dto.ProductDto"*/-->
+
+<form method="post" th:action="@{/products}" th:object="${product}">
+    <p>
+        <label for="name">Name:</label><br>
+        <input type="text" size="40" id="name" th:field="*{name}"/>
+        <br>
+        <label for="cost">Cost:</label><br>
+        <input type="text" size="40" id="cost" th:field="*{price}"/>
+    </p>
+    <p>
+        <input type="submit" value="Add">
+    </p>
+</form>
+</body>
+</html>

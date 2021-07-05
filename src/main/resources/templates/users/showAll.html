@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../static/style.css"/>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link th:href="@{/style.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!--/*@thymesVar id="user" type="ru.ntr.springbootapp.dto.UserDto"*/-->
+<!--/*@thymesVar id="users" type="java.util.List"*/-->
+
+<h2>Products</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>
+            login
+        </th>
+        <th>
+            role
+        </th>
+        <th sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN')">
+
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="user : ${users}">
+        <td><a th:href="@{/users/{id}(id = ${user.id})}" th:text="${user.login}">login</a></td>
+        <td><span th:text="${user.roles}">roles</span></td>
+        <td sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN')">
+            <form th:method="delete" th:action="@{/users/{id}(id=${user.getId()})}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<div sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN')" class="button_add_user">
+    <a th:href="@{users/new}">
+        <button type="button">Add user</button>
+    </a>
+</div>
+
+
+</body>
+</html>

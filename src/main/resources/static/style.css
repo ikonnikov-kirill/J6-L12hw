@@ -1,0 +1,40 @@
+h2 {
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 60%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+th, td {
+    border-collapse: collapse;
+    border: 1px solid purple;
+    padding: 5px;
+    text-align: center;
+}
+
+.button_add_product {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination ul {
+    padding: 4px;
+}
+
+.pagination li {
+    display: inline;
+    text-align: center;
+    padding: 3px;
+}
