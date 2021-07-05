@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="product" type="ru.ntr.springbootapp.dto.ProductDto"*/-->
+
+<p>
+    Id: <span th:text="${product.getId()}">Id</span><br>
+    Name: <span th:text="${product.getName()}">Name</span><br>
+    Cost: <span th:text="${product.getPrice()}">Cost</span><br>
+
+    <a th:href="@{/products}">Back</a> <br>
+    <a
+            sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'ROLE_MANAGER')"
+            th:href="@{/products/{id}/edit(id=${product.getId()})}">Edit</a> <br>
+
+<form
+        sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'ROLE_MANAGER')"
+        th:method="delete" th:action="@{/products/{id}(id=${product.getId()})}">
+    <input type="submit" value="Delete">
+</form>
+
+</p>
+
+</body>
+</html>

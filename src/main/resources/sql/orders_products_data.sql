@@ -1,0 +1,13 @@
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (7, 1, 3);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (7, 1, 3);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (9, 1, 3);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (11, 2, 4);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (12, 2, 4);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (12, 2, 4);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (9, 3, 10);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (7, 4, 7);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (12, 5, 15);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (12, 5, 15);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (12, 6, 15);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (7, 7, 7);
+INSERT INTO public.orders_products(product_id, order_id, price_id) VALUES (8, 7, 7);

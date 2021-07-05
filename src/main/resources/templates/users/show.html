@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="user" type="ru.ntr.springbootapp.dto.UserDto"*/-->
+
+<p>
+    Id: <span th:text="${user.getId()}">Id</span><br>
+    Name: <span th:text="${user.login}">Name</span><br>
+    Roles: <span th:text="${user.roles}">Cost</span><br>
+    <a th:href="@{/users}">Back</a> <br>
+    <a
+            sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN')"
+            th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a> <br>
+
+<form
+        sec:authorize="hasAnyRole('ROLE_SUPER_ADMIN')"
+        th:method="delete" th:action="@{/users/{id}(id=${user.getId()})}">
+    <input type="submit" value="Delete">
+</form>
+
+</p>
+
+</body>
+</html>
